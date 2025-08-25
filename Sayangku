@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Azzahra ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+    .slider {
+      width: 90%;
+      max-width: 500px;
+      height: 400px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      height: 100%;
+      transition: transform 0.7s ease;
+    }
+    .slide {
+      flex: 0 0 100%;   /* penting: pastikan tiap slide penuh */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2em;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 2em;
+      color: #ff4081;
+      text-shadow: 1px 1px #fff;
+    }
+    .name {
+      font-size: 1.5em;
+      color: #ff1744;
+      margin-bottom: 10px;
+    }
+    .sticker {
+      font-size: 2em;
+      margin: 5px;
+    }
+    .controls {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    .btn {
+      background: rgba(255, 64, 129, 0.8);
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff1744;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide">
+        <h1>🎂 Selamat Ulang Tahun 🎂</h1>
+        <p class="name">Azzahra Queena Ridan 💖</p>
+        <p>Hari ini, 26, adalah hari yang paling indah... karena aku bisa engucapkannyan untuk kamu  ✨</p>
+      </div>
+      <div class="slide">
+        <p>"Kamu bukan hanya cinta, tapi juga semangat, penguat, dan belahan jiwaku. Semoga semua mimpimu tercapaiyaa, sayangku,,, 💕"</p>
+        <div>
+          <span class="sticker">💝</span>
+          <span class="sticker">🌸</span>
+          <span class="sticker">🥰</span>
+        </div>
+      </div>
+      <div class="slide">
+        <p>"Aku bersyukur setiap hari karena Tuhan menghadirkanmu dalam hidupku. Selamat ulang tahun, Sayangku ✨"</p>
+        <div>
+          <span class="sticker">💫</span>
+          <span class="sticker">🌹</span>
+          <span class="sticker">💍</span>
+        </div>
+      </div>
+      <div class="slide">
+        <p>"Semoga hari-harimu dipenuhi senyum, tawa, dan cinta yang tak pernah habis... dari aku untukmu selamanya ❤️"</p>
+        <div>
+          <span class="sticker">🐻</span>
+          <span class="sticker">💕</span>
+          <span class="sticker">🍰</span>
+        </div>
+      </div>
+      <div class="slide">
+        <p>"Love you always, lebih dari yang bisa aku ungkapkan dengan kata-kata... Happy Birthday my Queen 👑💕"</p>
+        <div>
+          <span class="sticker">🎉</span>
+          <span class="sticker">🥳</span>
+          <span class="sticker">🎁</span>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="prevSlide()">❮</button>
+      <button class="btn" onclick="nextSlide()">❯</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.getElementById("slides");
+    const totalSlides = slides.children.length;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+  </script>
+</body>
+</html>
